@@ -1,0 +1,62 @@
+h1 {
+    color: red;
+}
+
+li {
+    /*list-style-type: none; 移除项目符号*/
+    list-style-type: square;
+}
+/*h1和li都是通过元素名规定样式*/
+
+
+/*使用给html元素加类名 来将元素样式化成不同的形式->再在css中选中所写的类名(eg.给项目2和spam添加了special类)*/
+/*然后通过在选择器开头加一个点来选中要添加样式的类*/
+.special {
+    color: orange;
+    font-weight: bold;
+}
+
+/*只对li元素操作, see?覆盖了上面的color更改,但font-weight还是用了上面的*/
+li.special {
+    color: red;
+}
+
+/*根据元素在文档中的位置确定样式:用包含选择符（两个选择器间加一个空格）仅对嵌套在<li>元素内的<em>做更改*/
+li em {
+    color: greenyellow;
+}
+
+/*相邻选择符 在两个选择器之间添加一个加号*/
+h1 + p { /*设置直接出现在标题后面并且与标题具有相同层级的段落样式,即这里只有p被设置了，h1只起定位的作用*/
+    font-style: italic;
+}
+
+/*根据标签的状态确定样式：例如当我们修改链接的样式时。当我们修改一个链接的样式时我们需要定位（针对） <a> （锚）标签。
+取决于是否是未访问的、访问过的、被鼠标悬停的、被键盘定位的，亦或是正在被点击当中的状态，这个标签有着不同的状态。
+下面的 CSS 代码使得没有被访问的链接颜色变为粉色、访问过的链接变为绿色*/
+a:link {
+    color: pink;
+}
+
+a:visited {
+    color: greenyellow;
+}
+
+a:hover {
+    text-decoration: none; /*改变链接被鼠标悬停的时候的样式*/
+}
+
+/*将多种类型组合在一起来定位，这里例子：在 <body> 之内，紧接在 <h1> 后面的 <p> 元素的内部，类名为 special*/
+body h1 + p .special {
+    color: yellow;
+    background-color: black;
+    padding: 5px;
+}
+
+/*MORE: 同时使用选择器和选择符*/
+/*例如：*/
+/* selects any <span> that is inside a <p>, which is inside an <article>  */
+article p span { ... }
+
+/* selects any <p> that comes directly after a <ul>, which comes directly after an <h1>  */
+h1 + ul + p { ... }
