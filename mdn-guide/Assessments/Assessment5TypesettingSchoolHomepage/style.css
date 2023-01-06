@@ -1,0 +1,122 @@
+/* General setup */
+
+* {
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+body {
+    margin: 0 auto;
+    min-width: 1000px;
+    max-width: 1400px;
+    line-height: 5rem;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+}
+
+/* Layout */
+
+section {
+    float: left;
+    width: 50%;
+}
+
+aside {
+    float: left;
+    width: 30%;
+}
+
+nav {
+    float: left;
+    width: 20%;
+}
+
+footer {
+    clear: both;
+}
+
+header, section, aside, nav, footer {
+    padding: 20px;
+}
+
+/* header and footer */
+
+header, footer {
+    border-top: 5px solid #a66;
+    border-bottom: 5px solid #a66;
+}
+
+/* WRITE YOUR CODE BELOW HERE */
+section,aside,nav {
+    font-family: Serif;
+    text-indent: 20px;
+}
+
+h1,h2 {
+    font-family: "slab serif";
+    font-size: 3rem;
+    letter-spacing: 3px;
+}
+
+p {
+    font-size: 2rem;
+}
+
+section,li {
+    font-size: 2rem;
+    list-style-type: square;
+}
+
+a {
+    font-size: 2rem;
+}
+
+header h1 {
+    text-align: center;
+}
+
+a:link {
+    color: coral;
+}
+
+a:visited {
+    color: #a66;
+}
+
+a:focus {
+    color: green;
+}
+
+a:hover {
+    color: grey;
+    text-decoration: none;
+}
+
+a:active {
+    color: red;
+}
+
+a[href*="http"] {
+    background: url("external-link-icon.png") no-repeat 100% 0; /*然后指定位置为 100%，使其出现在内容的右边，距离上方是 0px*/
+    background-size: 16px 16px; /*指定要显示的背景图像的大小*/
+    padding-right: 19px; /*为背景图片留出空间，这样就不会让它和文本重叠了。*/
+}
+
+nav>ul>li {
+    list-style-type: none; /*取消列表图案*/
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav>ul>li>a {
+    display: block;	/*垂直排列，且点击区域为方块*/
+    margin: 10px;
+    width: 240px;	/*block可设置width*/
+    height: 100px;
+    line-height: 100px; /*获得垂直居中效果*/
+    text-decoration: none;
+    background-color: white;
+    border: 2px solid #a66;
+    font-size: x-large;
+}
