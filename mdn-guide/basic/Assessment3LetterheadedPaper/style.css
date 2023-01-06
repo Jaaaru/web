@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: white;
+}
+
+article {
+    width: 210mm;
+    height: 297mm;
+    margin: 20px auto;
+    position: relative;
+    border: 0;
+}
+
+address {
+    position: absolute;
+    bottom: 8mm;
+    right: 20mm;
+}
+
+h1 {
+    position: absolute;
+    top: 12mm;
+    left: 20mm;
+    width: 128px;
+    height: 128px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 44px 0;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    background-image: url("logo.png"); /* 添加背景图片 */
+    filter: drop-shadow(5px 5px 3px black); /*前两个参数是x和y-offset*。
+    第三个是阴影的模糊半径值越大，阴影就越大，也越模糊。如果未指定，则默认为 0，从而产生清晰、不模糊的边缘。*/
+}
+
+/* Your CSS below here */
+/*将top&bottom image放入了<article>中做儿子，
+调整他们的位置为absolute， 所以是相对于最近的“positioned”祖先元素 即被relative的父元素article*/
+.top {
+    background: url("top-image.png"); /*as a fallback for browsers that don't support the previous declaration.*/
+    position: absolute;
+    max-height: 100%;
+    max-width: 100%; /*避免了top-image横向太长溢出了article水平右边框*/
+    /*top: 0; 此处不用声明 默认就是0，如果想更改高度可以调整这个数值*/
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0));
+    /*linear-gradient的三个参数：([从(哪儿-这个默认对称)到哪儿], [由啥颜色], [到啥颜色])。
+    rgba的最后一个参数是透明度*/
+    border-top: red solid 1mm;
+}
+
+.bottom {
+    position:absolute;
+    max-width: 100%; /*Analog oben*/
+    max-height: 100%;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3));
+    bottom: 0; /*这个不可少*/
+    border-bottom: red solid 1mm;
+}
+
