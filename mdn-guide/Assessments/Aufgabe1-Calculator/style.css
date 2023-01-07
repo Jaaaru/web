@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+    font-size: 10px;
+    margin: 10px auto;
+}
+
+body {
+    display: flex;
+    align-items: center;
+}
+
+.display {
+    width: 100%; /*子元素的宽度等于父元素的宽度（一定要设置"box-sizing:border-box",否则会造成子元素溢出。）*/
+    height: 80px;
+    border: #c3c5c7 solid 1px;
+    border-radius: 0.5rem;
+    text-align: right;
+    font-size: 3.5rem;
+    background: #fcfdea;
+    box-shadow: inset 0 2px 3px rgb(0 0 0 / 37%), 0 1px 1px rgb(0 0 0 / 13%);
+}
+
+/*去掉输入框内的上下箭头*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+button {
+    width: 120px;
+    height: 50px;
+    border: #898a8c solid 1px;
+    font-size: 2rem;
+    color: #666;
+    background-image: -webkit-linear-gradient(top,#e9e9ea,#d5d7dc);
+    box-shadow: inset 0 1px 2px white, 0 1px 1px rgb(0 0 0 / 20%);
+    border-radius: 0.5rem;
+    margin: 8px;
+}
+
+.orange {
+    color: #fff;
+    border-color: #b14610;
+    background-image: -webkit-linear-gradient(top,#dd834c,#ba5913);
+}
+
+.brown {
+    color: #fff;
+    border-color: #62422f;
+    background-image: -webkit-linear-gradient(top,#7c654f,#68533d);
+}
+
+.black {
+    color: #fff;
+    border-color: #2b2b2b;
+    background-image: -webkit-linear-gradient(top,#4e4e4e,#2d2d2d);
+}
+
+#container {
+    border: #bfbfbf solid 1px;
+    border-radius: 0.5rem;
+    padding: 1.5rem 2rem 2rem;
+    background: -webkit-linear-gradient(133deg,#bababa,#d7d7d7 50%,#e6e6e6 50%,#fff);
+    box-shadow: 0 4px rgb(0,0,0,0.4);
+}
+
+/*去掉所有button左右的margin*/
+.first,.last {
+    margin-left: 0;
+    margin-right: 0;
+}
