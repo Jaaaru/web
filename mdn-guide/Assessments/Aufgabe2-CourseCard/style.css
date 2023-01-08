@@ -1,14 +1,12 @@
 * {
     box-sizing: border-box;
-    color: #333;
 }
 
 
 
 .card {
-    width: 750px;
-    height: 350px;
-    border: 5px grey solid;
+    width: 700px;
+    height: 280px;
     font: 400 1em/1.8 PingFang SC,Avenir,Tahoma,Arial,Lantinghei SC,Microsoft Yahei,Hiragino Sans GB,Microsoft Sans Serif,WenQuanYi Micro Hei,Helvetica,sans-serif;
     -webkit-font-smoothing: antialiased;/*用来控制字体渲染时的平滑效果。这个属性仅在 Mac OS X/macOS 下生效。antialiased - 平滑像素级别的字体*/
 
@@ -17,21 +15,14 @@
     align-items: stretch;
 }
 
-
-.left-column {
-    float: left;
-
-}
-
 .left-column img {
     height: 100%;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .right-column {
-    float: right;
-    width: calc(100% - 300px);  /*运算符前后都需要保留一个空格*/
+    width: calc(100% - 250px);  /*运算符前后都需要保留一个空格*/
 }
 
 .sale,.original {
@@ -40,12 +31,76 @@
 
 .course-name {
     color: #404040;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 500;
-    line-height: 40px;
+    line-height: 45px;
 }
 
 .who {
     margin-top: 8px;
-    line-height: 17px;
+    line-height: 20px;
+    font-weight: 400; /*字体粗细程度*/
+    font-size: 20px;
+}
+
+.count {
+    color: #888;
+    line-height: 12px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /*将文字区域和button分隔开*/
+    align-items: flex-end;
+    margin-top: 33px;
+    overflow: hidden;
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+
+}
+
+.text {
+    color: #fa8919;
+    font-weight: 400;
+    position: relative;
+}
+
+.sale{
+    margin-right: 10px;
+    font-size: 28px;
+}
+
+.original {
+    margin-left: 5px;
+    color: #888;
+    font-size: 20px;
+}
+
+button:hover {
+    background: #ff7800;
+    cursor: pointer;
+}
+
+button {
+    border: none;
+    outline: none; /*消除默认点击蓝色边框效果*/
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 160px;
+    border-radius: 8px;
+    color: #fff;
+    background: #fa8919;
+}
+
+.bonus,button {
+    height: 40px;
+    font-size: 22px;
+    font-weight: 400;
 }
