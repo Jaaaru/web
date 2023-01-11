@@ -1,58 +1,77 @@
-ul li {
-    list-style: none; /*清除列表原有样式*/
-}
-
-.all {
-    width: 100%;
-    height: 80px;
-    font-size: 25px;
-    color: black;
-    background: white;
-
-}
-
-.all ul li {
-    float: left; /*使列表(一级菜单)横向*/
-
-    margin-right: 50px; /*每个菜单块间距推开*/
-    line-height: 80px; /*设置与父元素的height相同以使文本垂直方向居中*/
-    position: relative; /*设置一级菜单内容的位置 */
-}
-
-.submenu1 {
-    width: 160px;
-    height: 240px;
-    margin-left: -80px;
-    background-color: white;
-    display: none;
-    position: absolute;
-}
-
-.son1 {
-    display: block;
+.container {
+    width: 100%; /*总共*/
+    display: flex;
     font-size: 20px;
-    border: 2px black solid;
 }
 
-.all ul li:hover ul {
-    display: block; /* 当一级菜单的li获取hover后将二级菜单的ul显示出来 */
+.logo {
+    width: 10%;
+    height: 65px;
+    background-image: url("logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50%;
 }
 
-button {
-    border: none;
-    cursor: pointer;
+.text-btn-s {
+    width: 60%;
+    line-height: 65px;
+    text-align: center;
+    font-weight: 500;
 
 }
 
-input {
-    width: 240px;
-    height: 36px;
-    margin-left: 20px;
+
+.btn {
+    text-decoration: none;
     color: #353535;
-    background: #f6f7fb;
+    padding: 8px 14px;
+}
+
+.input {
+    width: 15%;
+    padding-right: 35px;
+    background: #f6f7fb url("search-icon.png") no-repeat right;
+    background-size: 30px;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+
     border-radius: 20px;
     border: none;
-    padding-right: 12px;
-    box-sizing: border-box;
-    font-size: 24px;
+    text-align: center;
+}
+
+/*设置hot图标注意以下两点*/
+.jiangtang {
+    display: inline; /*1. 可以使块级元素div不要换行！*/
+    color: #fa8919;
+    position: relative; /*2.hot的父元素*/
+}
+.hot1 {
+    width: 40%;
+    height: 40%;
+    position: absolute; /*2.在父元素为relativ的情况下用绝对定位hot图标*/
+    top: -6px;
+    right:-6px;
+}
+/*analog*/
+.xunlianying {
+    display: inline;/*1.*/
+    position: relative; /*2.hot的父元素*/
+}
+.hot2 {
+    position: absolute; /*2.在父元素为relativ的情况下用绝对定位hot图标*/
+    width: 30%; /*细调相对位置*/
+    height: 40%;
+    top: -6px;
+    right:-6px;
+}
+
+.login {
+    width: 15%;
+    color: #888;
+    line-height: 65px;
+    text-align: center;
+    cursor: pointer;
 }
