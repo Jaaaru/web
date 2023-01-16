@@ -2,6 +2,7 @@
     width: 100%; /*总共*/
     display: flex;
     font-size: 20px;
+    white-space: nowrap; /*使文字不换行显示*/
 }
 
 .logo {
@@ -18,7 +19,7 @@
     line-height: 65px;
     text-align: center;
     font-weight: 500;
-
+    overflow: hidden;
 }
 
 
