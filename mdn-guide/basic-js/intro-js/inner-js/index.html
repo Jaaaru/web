@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <title>使用 JavaScript 的示例</title>
+
+  <script>
+    // 内部JavaScript Beispiel
+    // 在此编写 JavaScript 代码
+    document.addEventListener("DOMContentLoaded", function() {
+      function createParagraph() {
+        let para = document.createElement('p');
+        para.textContent = '你点击了这个按钮！';
+        document.body.appendChild(para);
+      }
+
+      const buttons = document.querySelectorAll('button');
+
+      for(let i = 0; i < buttons.length ; i++) {
+        buttons[i].addEventListener('click', createParagraph);
+      }
+    });
+
+  //此处内部js块放在 </head> 标签结束前，这么做有隐患。
+    /*
+    把脚本元素放在文档体的底端（</body> 标签之前，与之相邻），
+    这样脚本就可以在 HTML 解析完毕后加载了。
+    此方案（以及上述的 DOMContentLoaded 方案）的问题是：
+    只有在所有 HTML DOM 加载完成后才开始脚本的加载/解析过程。
+    对于有大量 JavaScript 代码的大型网站，可能会带来显著的性能损耗。
+    这也是 async 属性诞生的初衷。
+     */
+
+  </script>
+</head>
+<body>
+<button>点我呀</button>
+</body>
+</html>
