@@ -30,15 +30,18 @@
   const para = document.createElement('p');
 
   // Add your code here
-  const name = names[Math.floor(Math.random() * 8)];
-  /*
-  Math.random()能够生成[0,1)的随机数，那么Math.random() * 7就能生成[0, 7)的随机数了，
-  但是取不到边界值8，那么我们再将Math.random() * 8就能生成[0, 8)的随机数，
-  这样我们就能取到[0, 7]范围内的数了，
-  最后再通过Math.floor函数来实现Math.floor( Math.random() * 8 ) ，
-  最终生成的随机数将在[0, 7]范围内的整数了
-   */
-  document.write(name);
+  function chooseName() {
+    const name = names[Math.floor(Math.random() * 8)];
+    /*
+    Math.random()能够生成[0,1)的随机数，那么Math.random() * 7就能生成[0, 7)的随机数了，
+    但是取不到边界值8，那么我们再将Math.random() * 8就能生成[0, 8)的随机数，
+    这样我们就能取到[0, 7]范围内的数了，
+    最后再通过Math.floor函数来实现Math.floor( Math.random() * 8 ) ，
+    最终生成的随机数将在[0, 7]范围内的整数了
+     */
+    para.textContent = name;
+  }
+  chooseName();
   // Don't edit the code below here!
 
   const section = document.querySelector('section');
