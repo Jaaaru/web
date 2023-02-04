@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Function start</title>
+  <style>
+    .msgBox {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      width: 200px;
+      background: #eee;
+    }
+
+    .msgBox p {
+      line-height: 1.5;
+      padding: 10px 20px;
+      color: #333;
+    }
+
+    .msgBox button {
+      background: none;
+      border: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 1.1rem;
+      color: #aaa;
+    }
+
+  </style>
+</head>
+<body>
+<button>Display message box</button>
+
+<script>
+  function displayMessage(msgText, msgType) {
+
+    const html = document.querySelector('html');
+
+    const panel = document.createElement('div');
+    panel.setAttribute('class', 'msgBox');
+    html.appendChild(panel); /*将panel<div>元素指定为<html>的子元素，
+  这样做是因为我们创建了一个元素之后这个元素并不会莫名其妙的出现在我们的页面上
+  （浏览器只知道我们创建了一个元素，但是不知道把这个元素怎么呈现出来） —
+  因此，我们给这个元素了一个定位，就是显示在 html 里面！
+  */
+
+    const msg = document.createElement('p');
+    //msg.textContent = 'This is a message box'; //给msg赋值
+    msg.textContent = msgText;
+    panel.appendChild(msg); //追加到了 panel<div>之下
+
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = 'x'; //给按钮赋值
+    panel.appendChild(closeBtn); //追加到了 panel<div>之下
+
+    closeBtn.onclick = function() {
+      //点击事件后定义了一个匿名函数，功能是将消息提示框从父容器中删除
+      //达到了关闭的效果
+      panel.parentNode.removeChild(panel);
+    }
+  }
+  //displayMessage();
+  const btn = document.querySelector('button');
+  //btn.onclick = displayMessage; //直接使用函数名称来调用
+  btn.onclick = function() {
+    displayMessage('Woo, this is a different message!');
+  };
+
+  /**
+   * 函数名后面没有括号原因：
+   * 在函数名后面的这个括号叫做“函数调用运算符”（function invocation operator），
+   * 只有在想直接调用函数的地方才这么写。如果上面这一行用了displayMessage()那么还没有
+   * 点击按钮函数就会被直接调用。
+   * ！同样要重视的是，匿名函数里面的代码也不是直接运行的，只要代码在函数作用域内。！
+   */
+</script>
+</body>
+</html>
